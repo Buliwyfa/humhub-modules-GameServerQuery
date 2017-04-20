@@ -47,15 +47,18 @@ foreach ($server as $id => $data) {
             }
         }
         ?>
-        <div class = "panel panel-default panel-serverquery" id="serverquery">
+        <div class = "panel panel-default panel-serverquery media" id="game_server_query">
 
             <!-- Display panel menu widget -->
-            <?php echo \humhub\widgets\PanelMenu::widget(array('id' => 'serverquery')); ?>
-            
-            <div class = "panel-heading">
-                <img src="<?php echo $assets->baseUrl ?>/images/games/mumble.jpg" alt="Mumble" title="Mumble" height="16" width="16">
-                <strong><?php echo $data['gq_hostname']; ?></strong></div>
-            <div class = "panel-body">                    
+            <?php echo \humhub\widgets\PanelMenu::widget(array('id' => 'game_server_query')); ?>
+
+            <div class = "panel-heading">Server <strong>Panel</strong></div>      
+
+            <div class = "panel-body content">  
+                <a href="mumble://mumble.cwclan.de/?version=1.2.0">
+                    <img src="<?php echo $assets->baseUrl ?>/images/mumble/mumble-icon.png" alt="Mumble" title="Mumble" height="16" width="16">
+                    <strong><?php echo $data['gq_hostname']; ?></strong>   
+                </a>
                 <span style='float:right'><?php echo $numplayers; ?>/<?php echo $data['gq_maxplayers']; ?><span class='fa fa-group'></span></span> 
                     <?php
                     if ($numplayers > 0) {

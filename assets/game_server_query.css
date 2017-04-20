@@ -1,0 +1,14 @@
+#game_server_query .fa {
+  padding: 0 .1em;
+}
+#game_server_query h6 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+#game_server_query .gqpmumblelist {
+  list-style: none;
+}
+#game_server_query .gqpmumblelist li {
+  list-style-image: url(images/mumble/list_player.png);
+}
+/*# sourceMappingURL=game_server_query.css.map */
