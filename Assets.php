@@ -1,9 +1,7 @@
 <?php
 
 /**
- * @link https://www.humhub.org/
- * @copyright Copyright (c) 2015 HumHub GmbH & Co. KG
- * @license https://www.humhub.com/licences
+ * @author Philipp Horna <globefreak at web.de> 
  */
 
 namespace humhub\modules\game_server_query;
@@ -13,7 +11,7 @@ use yii\web\AssetBundle;
 class Assets extends AssetBundle {
 
     public $css = [
-        'game_server_query.css'        
+        'game_server_query.css'
     ];
 
     public function init() {

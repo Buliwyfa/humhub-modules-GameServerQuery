@@ -1,15 +1,8 @@
 {
     "id": "game_server_query",
     "name": "Game Server Query",
-    "description": "Query some different servers based on GameQ.",
-    "keywords": [
-        "serverquery",
-        "gameq",
-        "server",
-        "query",
-        "game",
-        "voice"
-    ],
+    "description": "Query a lot different servers based on GameQ.",
+    "keywords": ["serverquery", "gameq", "server", "query", "game", "voice"],
     "version": "0.1",
     "authors": [
         {

@@ -1,1 +1,1 @@
-{"version":3,"sources":["./game_server_query.less"],"names":[],"mappings":"AAAA,kBACI;EACI,eAAA;;AAFR,kBAII;EACI,gBAAA;EACA,kBAAA;;AANR,kBAQI;EACI,gBAAA;;AATR,kBAQI,eAEI;EACI,oDAAA","file":"game_server_query.css"}
+{"version":3,"sources":["./game_server_query.less"],"names":[],"mappings":"AAAA,kBACI;EACI,eAAA;;AAFR,kBAII;EACI,gBAAA;EACA,kBAAA;;AANR,kBAQI;EACI,gBAAA;;AATR,kBAQI,gBAEI;EACI,oDAAA;;AAXZ,kBAcI;EACI,gBAAA;EACA,mBAAA","file":"game_server_query.css"}

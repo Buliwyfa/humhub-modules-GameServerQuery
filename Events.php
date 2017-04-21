@@ -1,31 +1,30 @@
 <?php
 
 /**
- * @author globeFrEak
+ * @author Philipp Horna <globefreak at web.de>
  */
-class Events {
+namespace humhub\modules\game_server_query;
 
-    /**
-     * TopMenu
-     *
-     * @param CEvent $event
-     */
-    public static function onTopMenuInit($event) {
-        $event->sender->addItem(array(
-            'label' => Yii::t('Module.base', 'Steam Group'),
-            'url' => 'http://steamcommunity.com/groups/CW-CLAN',
-            'icon' => '<i class="fa fa-steam-square"></i>',
-            'isActive' => (Yii::app()->controller->module && Yii::app()->controller->module->id == 'game_server_query'),
-        ));
-    }
+use Yii;
 
-    /**
-     * Sidebar
-     * 
-     * @param CEvent $event
-     */
+class Events {  
+
     public static function onDashboardSidebarInit($event) {
-        $event->sender->addWidget('application.modules.game_server_query.widgets.ServerPanel', array(), array('sortOrder' => 1));
+        if (Yii::$app->hasModule('game_server_query')) {
+            $event->sender->addWidget(widgets\ServerPanel::className(), array(), array('sortOrder' => 1));
+        }
+    }    
+
+    public static function onSpaceSidebarInit($event)
+    {
+        if (Yii::$app->user->isGuest) {
+            return;
+        }
+
+         $space = $event->sender->space;
+        if ($space->isModuleEnabled('game_server_query')) {
+            $event->sender->addWidget(widgets\ServerPanel::className(), array(), array('sortOrder' => 1));
+        }
     }
 
 }

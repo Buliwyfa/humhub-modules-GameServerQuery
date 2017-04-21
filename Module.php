@@ -1,41 +1,70 @@
 <?php
 
 /**
- * @author globeFrEak
+ * @author Philipp Horna <globefreak at web.de> 
  */
 
 namespace humhub\modules\game_server_query;
 
 use Yii;
-use yii\helpers\Url;
+use humhub\modules\space\models\Space;
+use humhub\modules\content\components\ContentContainerActiveRecord;
 
-/**
- * BirthdayModule is responsible for the the birthday functions.
- * 
- * @author Sebastian Stumpf Changes by Philipp Horna
- */
-class Module extends \humhub\components\Module
-{
+class Module extends \humhub\modules\content\components\ContentContainerModule {
+
     /**
-     * On build of the dashboard sidebar widget, add the birthday widget if module is enabled.
-     *
-     * @param type $event
+     * @inheritdoc
      */
-    public static function onSidebarInit($event)
-    {   
-    	if (Yii::$app->hasModule('game_server_query')) {
-            $event->sender->addWidget(widgets\ServerPanel::className(), array(), array(
-                'sortOrder' => 1
-            ));
+    public function init() {
+        parent::init();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function enable() {
+        parent::enable();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function disable() {
+        parent::disable();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentContainerTypes() {
+        return [
+            Space::className(),
+        ];
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentContainerName(ContentContainerActiveRecord $container) {
+        return Yii::t('GameServerQueryModule.base', 'Game Server Query');
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getContentContainerDescription(ContentContainerActiveRecord $container) {
+        if ($container instanceof Space) {
+            return Yii::t('GameServerQueryModule.base', 'Query a lot different servers based on GameQ.');
         }
     }
 
-      /**
-     * Enables this module
+    /**
+     * @inheritdoc
      */
-    public function enable()
-    {        
-        parent::enable();
+    public function disableContentContainer(ContentContainerActiveRecord $container) {
+        parent::disableContentContainer($container);
     }
+
 }
+
 ?>
