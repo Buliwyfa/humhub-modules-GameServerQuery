@@ -17,6 +17,7 @@ return [
     'events' => [
         ['class' => 'humhub\modules\dashboard\widgets\Sidebar', 'event' => BaseMenu::EVENT_INIT, 'callback' => ['humhub\modules\game_server_query\Events', 'onDashboardSidebarInit']],
         ['class' => 'humhub\modules\space\widgets\Sidebar', 'event' => BaseMenu::EVENT_INIT, 'callback' => ['humhub\modules\game_server_query\Events', 'onSpaceSidebarInit']],
+        ['class' => 'humhub\modules\space\widgets\Menu', 'event' => BaseMenu::EVENT_INIT, 'callback' => ['humhub\modules\game_server_query\Events', 'onSpaceMenuInit']], 
     ],
 ];
 ?>
