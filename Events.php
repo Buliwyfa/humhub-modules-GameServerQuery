@@ -22,7 +22,7 @@ class Events {
         }
 
         $space = $event->sender->space;
-        if ($space->isModuleEnabled('game_server_query') && !Yii::$app->controller->module->id == 'game_server_query') {
+        if ($space->isModuleEnabled('game_server_query') && Yii::$app->controller->id != 'server') {
             $event->sender->addWidget(widgets\ServerPanel::className(), array(), array('sortOrder' => 1));
         }
     }
