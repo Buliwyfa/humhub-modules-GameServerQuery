@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
 class Assets extends AssetBundle {
 
     public $css = [
-        'game_server_query.css'
+        'game_server_query.min.css'
     ];
 
     public function init() {
